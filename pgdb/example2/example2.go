@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Lairon/pg-db-go/pgdb"
+	"github.com/Lairon/db-go/pgdb"
 	"github.com/go-pg/pg/v10"
 	"github.com/go-pg/pg/v10/orm"
 )
