@@ -1,5 +1,5 @@
-module github.com/Lairon/pg-db-go
+module github.com/Lairon/db-go
 
-go 1.14
+go 1.16
 
-require github.com/go-pg/pg/v10 v10.8.0
+require github.com/go-pg/pg/v10 v10.9.0
