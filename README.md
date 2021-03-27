@@ -1,1 +1,1 @@
-# pg-db-go
+# db-go
