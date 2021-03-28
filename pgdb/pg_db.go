@@ -26,7 +26,6 @@ func Connect(pgOptions *pg.Options) *pg.DB {
 	_, err := db.QueryOne(pg.Scan(&n), "SELECT 1")
 	if err != nil {
 		log.Panicf("Postgres connection error %+v\n", err)
-		panic(err)
 	}
 
 	log.Println("Successfully connected to ->", db.Options().Addr)
