@@ -35,7 +35,7 @@ func TestNewRedisDB_WhenOptionsNil_ThenPanic(t *testing.T) {
 func TestNewRedisDB_WhenOptionsContainBadAddr_ThenPanic(t *testing.T) {
 	defer func() {
 		if r := recover(); r != nil {
-			assert.Equal(t, fmt.Sprintln("Redis connection error dial tcp: lookup awdawdaw: no such host"), fmt.Sprint(r))
+			assert.Equal(t, fmt.Sprintln("Redis connection error dial tcp: lookup bad: no such host"), fmt.Sprint(r))
 		}
 	}()
 	NewRedisDB(&redis.Options{
