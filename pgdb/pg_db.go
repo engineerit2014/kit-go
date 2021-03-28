@@ -1,8 +1,8 @@
 package pgdb
 
 import (
-	"fmt"
 	"github.com/go-pg/pg/v10"
+	"log"
 	"sync"
 )
 
@@ -25,11 +25,10 @@ func Connect(pgOptions *pg.Options) *pg.DB {
 	var n int
 	_, err := db.QueryOne(pg.Scan(&n), "SELECT 1")
 	if err != nil {
-		fmt.Errorf("Connection error %+v\n", err)
-		panic(err)
+		log.Panicf("Postgres connection error %+v\n", err)
 	}
 
-	fmt.Println("Successfully connected to ->", db.Options().Addr)
+	log.Println("Successfully connected to ->", db.Options().Addr)
 
 	return db
 }

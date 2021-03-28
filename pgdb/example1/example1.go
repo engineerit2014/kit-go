@@ -55,7 +55,7 @@ func exampleDBModel() {
 	}
 
 	book1 := Book{
-		Title: "PabloC",
+		Title:    "PabloC",
 		ReaderID: user1.ID,
 	}
 	_, err = db.Model(&book1).Insert()
@@ -65,7 +65,7 @@ func exampleDBModel() {
 
 	//select user by pk
 	user := User{
-		ID:     user1.ID,
+		ID: user1.ID,
 	}
 	err = db.Model(&user).WherePK().Select()
 	if err != nil {
