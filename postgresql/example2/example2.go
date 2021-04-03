@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/Lairon/db-go/pgdb"
 	"github.com/go-pg/pg/v10"
 	"github.com/go-pg/pg/v10/orm"
+	pgKit "github.com/laironacosta/kit-go/postgresql"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -33,7 +33,7 @@ func main() {
 
 func NewPgClient() *PgClient {
 	return &PgClient{
-		db: pgdb.NewPgDB(&pg.Options{
+		db: pgKit.NewPgDB(&pg.Options{
 			User:     "root",
 			Password: "root",
 			Database: "db-test",

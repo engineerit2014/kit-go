@@ -1,4 +1,4 @@
-package redisdb
+package redis
 
 import (
 	"github.com/go-redis/redis/v8"
@@ -7,7 +7,7 @@ import (
 )
 
 var redisOptions = &redis.Options{
-	Addr:     "redis:6379",
+	Addr:     "redis-test:6379",
 	Password: "",
 	DB:       0,
 }
