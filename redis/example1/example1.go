@@ -2,10 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"github.com/Lairon/db-go/redisdb"
 	"github.com/go-redis/redis/v8"
-	"log"
+	redisKit "github.com/laironacosta/kit-go/redis"
+	log "github.com/sirupsen/logrus"
 	"time"
 )
 
@@ -25,13 +24,13 @@ func main() {
 	client.SetKey(ctx, key, value, 10*time.Second)
 	val := client.GetKey(ctx, key)
 
-	fmt.Printf("Key: %s, Value: %s", key, val)
+	log.Infof("Key: %s, Value: %s", key, val)
 }
 
 func NewRedisClient() *RedisClient {
 	return &RedisClient{
-		db: redisdb.NewRedisDB(&redis.Options{
-			Addr:     "localhost:6379",
+		db: redisKit.NewRedisDB(&redis.Options{
+			Addr:     "redis-test:6379",
 			Password: "", // no password set
 			DB:       0,  // use default DB
 		}),

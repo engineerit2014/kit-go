@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"github.com/Lairon/db-go/pgdb"
 	"github.com/go-pg/pg/v10"
 	"github.com/go-pg/pg/v10/orm"
+	pgKit "github.com/laironacosta/kit-go/postgresql"
+	log "github.com/sirupsen/logrus"
 )
 
 type User struct {
@@ -33,10 +33,10 @@ func main() {
 
 func NewPgClient() *PgClient {
 	return &PgClient{
-		db: pgdb.NewPgDB(&pg.Options{
-			User:     "postgres",
-			Password: "postgres",
-			Database: "pg-db-go",
+		db: pgKit.NewPgDB(&pg.Options{
+			User:     "root",
+			Password: "root",
+			Database: "db-test",
 		}),
 	}
 }
@@ -102,9 +102,9 @@ func (c *PgClient) createSchemeInsertSelect() {
 		panic(err)
 	}
 
-	fmt.Printf("%+v \n", user)
-	fmt.Printf("%+v \n", users)
-	fmt.Printf("%+v \n", book)
+	log.Infof("%+v \n", user)
+	log.Infof("%+v \n", users)
+	log.Infof("%+v \n", book)
 
 }
 
