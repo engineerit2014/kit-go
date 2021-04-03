@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"github.com/go-pg/pg/v10"
 	"github.com/go-pg/pg/v10/orm"
+	log "github.com/sirupsen/logrus"
 )
 
 type User struct {
@@ -25,9 +25,9 @@ func main() {
 
 func exampleDBModel() {
 	db := pg.Connect(&pg.Options{
-		User:     "postgres",
-		Password: "postgres",
-		Database: "pg-db-go",
+		User:     "root",
+		Password: "root",
+		Database: "db-test",
 	})
 	defer db.Close()
 
@@ -89,9 +89,9 @@ func exampleDBModel() {
 		panic(err)
 	}
 
-	fmt.Printf("%+v \n", user)
-	fmt.Printf("%+v \n", users)
-	fmt.Printf("%+v \n", book)
+	log.Infof("%+v \n", user)
+	log.Infof("%+v \n", users)
+	log.Infof("%+v \n", book)
 
 }
 
