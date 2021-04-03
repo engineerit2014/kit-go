@@ -18,7 +18,7 @@ See the examples already implemented in the folder `/postgresql`.
 
 See the examples already implemented in the folder `/redis`.
 
-### Testing
+## Testing
 
 To run the tests simply execute the following command:
 
