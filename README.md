@@ -1,18 +1,21 @@
-# Database: Postgresql, Redis, etc.
-This project shows the implementation of clients for postgresql, Redis and other databases in Golang.  
+# Kit
+Set of common packages used by all or most projects in my repositories.
 
 ## Table of Contents
 
-- [Implementation](#implementation)
+- [Implementation examples](#implementation-examples)
     - [Postgresql](#postgresql)
     - [Redis](#redis)
 
-## Implementation
+## Implementation examples
 
 ### Postgresql 
 
-See the examples already implemented in the folder `/pgdb`.
+See the examples already implemented in the folder `/postgresql`.
 
 ### Redis
 
-See the examples already implemented in the folder `/redisdb`.
+See the examples already implemented in the folder `/redis`.
+
+lairon14@gmail.com  
+-- Lairon

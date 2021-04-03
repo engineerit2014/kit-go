@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"github.com/Lairon/db-go/redisdb"
 	"github.com/go-redis/redis/v8"
+	redisKit "github.com/laironacosta/kit-go/redis"
 	log "github.com/sirupsen/logrus"
 	"time"
 )
@@ -29,7 +29,7 @@ func main() {
 
 func NewRedisClient() *RedisClient {
 	return &RedisClient{
-		db: redisdb.NewRedisDB(&redis.Options{
+		db: redisKit.NewRedisDB(&redis.Options{
 			Addr:     "redis-test:6379",
 			Password: "", // no password set
 			DB:       0,  // use default DB
