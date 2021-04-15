@@ -1,4 +1,4 @@
-package errors
+package responses
 
 // GenericHttpError is used to pass an error during the request through the application
 type GenericHttpError struct {

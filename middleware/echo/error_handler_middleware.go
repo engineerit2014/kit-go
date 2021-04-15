@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/labstack/echo/v4"
-	e "github.com/laironacosta/kit-go/middleware"
+	"github.com/laironacosta/kit-go/middleware/responses"
 	"github.com/pkg/errors"
 	"net/http"
 )
@@ -31,7 +31,7 @@ func (h *ErrorHandlerMiddleware) HandlerError(next echo.HandlerFunc) echo.Handle
 			var status int
 			// Build the error response
 			switch act := errors.Cause(err).(type) {
-			case *e.GenericHttpError:
+			case *responses.GenericHttpError:
 				er = act.ErrorMsg
 				erCode = act.ErrorCode
 				status = act.Status
